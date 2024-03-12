@@ -246,7 +246,7 @@ files.grep_string = function(opts)
     end
   elseif opts.search_dirs then
     for _, path in ipairs(opts.search_dirs) do
-      table.insert(args, vim.fn.expand(path))
+      table.insert(args, utils.conditional_path_expand(path))
     end
   end
 

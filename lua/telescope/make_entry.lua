@@ -592,7 +592,7 @@ function make_entry.gen_from_buffer(opts)
     },
   }
 
-  local cwd = vim.fn.expand(opts.cwd or vim.loop.cwd())
+  local cwd = utils.conditional_path_expand(opts.cwd or vim.loop.cwd())
 
   local make_display = function(entry)
     -- bufnr_width + modes + icon + 3 spaces + : + lnum
