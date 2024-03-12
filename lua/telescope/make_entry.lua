@@ -149,7 +149,7 @@ do
   function make_entry.gen_from_file(opts)
     opts = opts or {}
 
-    local cwd = vim.fn.expand(opts.cwd or vim.loop.cwd())
+    local cwd = utils.conditional_path_expand(opts.cwd or vim.loop.cwd())
 
     local disable_devicons = opts.disable_devicons
 
