@@ -310,7 +310,7 @@ do
     local display_string = "%s%s%s"
 
     mt_vimgrep_entry = {
-      cwd = vim.fn.expand(opts.cwd or vim.loop.cwd()),
+      cwd = utils.conditional_path_expand(opts.cwd or vim.loop.cwd()),
 
       display = function(entry)
         local display_filename = utils.transform_path(opts, entry.filename)
